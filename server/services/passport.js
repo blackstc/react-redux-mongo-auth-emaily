@@ -20,13 +20,14 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: '/auth/google/callback'
+      callbackURL: '/auth/google/callback',
+      proxy: true
     },
     async (accessToken, refreshToken, profile, done) => {
-      const exisitigUser = await User.findOne({ googleId: profile.id });
+      const existingUser = await User.findOne({ googleId: profile.id });
 
-      if (exisitingUser) {
-        return done(null, exisitingUser);
+      if (existingUser) {
+        return done(null, existingUser);
       }
 
       const user = await new User({ googleId: profile.id }).save();
