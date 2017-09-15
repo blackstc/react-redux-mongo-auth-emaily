@@ -15,7 +15,8 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.12",
-    "react-stripe-checkout": "^2.6.3"
+    "react-stripe-checkout": "^2.6.3",
+    "redux-form": "^7.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
