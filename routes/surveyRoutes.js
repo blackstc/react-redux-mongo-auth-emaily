@@ -2,7 +2,6 @@ const _ = require('lodash');
 const Path = require('path-parser');
 const { URL } = require('url');
 const mongoose = require('mongoose');
-const log = require('../services/logger');
 const requireLogin = require('../middlewares/requireLogin');
 const requireCredits = require('../middlewares/requireCredits');
 const Mailer = require('../services/Mailer');
@@ -37,7 +36,7 @@ module.exports = app => {
   });
 
   app.post('/api/surveys/webhooks', (req, res) => {
-    log.info('SendGrid webhook received...');
+    console.info('SendGrid webhook received...');
     const p = new Path('/api/surveys/:surveyId/:choice');
 
     _.chain(req.body)
