@@ -2,7 +2,6 @@ import React from 'react';
 
 export default ({ input, label, name, meta: { error, touched } }) => {
   const autoFocus = input.name === 'title';
-  console.log('autoFocus', autoFocus);
 
   return (
     <div>
